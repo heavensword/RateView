@@ -33,13 +33,15 @@
     self.secondRankView.scrollToRate = TRUE;
     self.secondRankView.spacing = 5;
     
-    self.thirdRankView.foreheadImageName = @"goldLeafItalics";
-    self.thirdRankView.backgroundImageName = @"sliverLeafItalics";
-    self.thirdRankView.iconSize = CGSizeMake(46, 23.5);
+    self.thirdRankView.foreheadImageName = @"btn_star";
+    self.thirdRankView.backgroundImageName = @"bg_star";
+    self.thirdRankView.iconSize = CGSizeMake(17, 16);
     self.thirdRankView.scrollToRate = FALSE;
+    self.thirdRankView.spacing = 5;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

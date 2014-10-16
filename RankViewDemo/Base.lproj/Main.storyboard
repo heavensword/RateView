@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.88313670040000003" green="1" blue="0.75254804180000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Xmc-0B-feJ"/>
+                                    <constraint firstAttribute="height" constant="80" id="Xmc-0B-feJ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -54,8 +55,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.88313670040000003" green="1" blue="0.75254804180000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8tY-aP-M0h"/>
-                                    <constraint firstAttribute="width" constant="300" id="K8k-nq-lt4"/>
+                                    <constraint firstAttribute="height" constant="30" id="8tY-aP-M0h"/>
+                                    <constraint firstAttribute="width" constant="200" id="K8k-nq-lt4"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -73,14 +74,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Tae-DB-wRI" secondAttribute="centerX" id="1Sv-6u-oqk"/>
-                            <constraint firstAttribute="width" secondItem="Tae-DB-wRI" secondAttribute="width" id="5wl-z8-YGh"/>
+                            <constraint firstItem="Tae-DB-wRI" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" constant="100" id="5wl-z8-YGh">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-100"/>
+                            </constraint>
                             <constraint firstItem="FWa-iz-DEw" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="QOS-13-lcz"/>
-                            <constraint firstAttribute="centerX" secondItem="t10-PI-ceB" secondAttribute="centerX" id="RIa-Gd-1pw"/>
                             <constraint firstItem="t10-PI-ceB" firstAttribute="top" secondItem="Tae-DB-wRI" secondAttribute="bottom" constant="45" id="Vgz-PY-IBd"/>
-                            <constraint firstAttribute="centerX" secondItem="FWa-iz-DEw" secondAttribute="centerX" id="ZGH-hF-ndM"/>
+                            <constraint firstAttribute="centerX" secondItem="FWa-iz-DEw" secondAttribute="centerX" id="Y47-a6-3fZ"/>
                             <constraint firstItem="Tae-DB-wRI" firstAttribute="top" secondItem="FWa-iz-DEw" secondAttribute="bottom" constant="38" id="aDa-4K-2zX"/>
+                            <constraint firstItem="FWa-iz-DEw" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="fBd-It-EIh"/>
+                            <constraint firstAttribute="centerX" secondItem="Tae-DB-wRI" secondAttribute="centerX" id="g62-tz-fpS"/>
                             <constraint firstItem="FWa-iz-DEw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="100" id="gvd-He-yew"/>
+                            <constraint firstAttribute="centerX" secondItem="t10-PI-ceB" secondAttribute="centerX" id="h7r-C3-Eak"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -90,13 +94,14 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="QOS-13-lcz"/>
-                                <exclude reference="ZGH-hF-ndM"/>
+                                <exclude reference="Y47-a6-3fZ"/>
+                                <exclude reference="fBd-It-EIh"/>
                                 <exclude reference="gvd-He-yew"/>
-                                <exclude reference="1Sv-6u-oqk"/>
                                 <exclude reference="5wl-z8-YGh"/>
                                 <exclude reference="aDa-4K-2zX"/>
-                                <exclude reference="RIa-Gd-1pw"/>
+                                <exclude reference="g62-tz-fpS"/>
                                 <exclude reference="Vgz-PY-IBd"/>
+                                <exclude reference="h7r-C3-Eak"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -107,13 +112,14 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="QOS-13-lcz"/>
-                                <include reference="ZGH-hF-ndM"/>
-                                <include reference="gvd-He-yew"/>
-                                <include reference="1Sv-6u-oqk"/>
+                                <include reference="Y47-a6-3fZ"/>
+                                <include reference="fBd-It-EIh"/>
+                                <exclude reference="gvd-He-yew"/>
                                 <include reference="5wl-z8-YGh"/>
                                 <include reference="aDa-4K-2zX"/>
-                                <include reference="RIa-Gd-1pw"/>
+                                <include reference="g62-tz-fpS"/>
                                 <include reference="Vgz-PY-IBd"/>
+                                <include reference="h7r-C3-Eak"/>
                             </mask>
                         </variation>
                     </view>

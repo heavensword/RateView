@@ -78,10 +78,16 @@
     }
     else {
         rate = ceil(((location.x - [self marginX]) / self.iconSize.width));
-        if (rate >= 0 && rate <= _number) {
-            _rate = rate;
-            _x = rate * self.iconSize.width + [self marginX];
+        if (rate < 0) {
+            _rate = 0;
         }
+        else if (rate > _number) {
+            _rate = _number;
+        }
+        else {
+            _rate = rate;
+        }
+        _x = rate * (self.iconSize.width + _spacing) - _spacing + [self marginX];
     }
     [self setNeedsLayout];
 }
