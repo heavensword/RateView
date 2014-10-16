@@ -20,6 +20,9 @@
  * Default value 0. the value of rate range in 0-number
  */
 @property (nonatomic, assign) CGFloat rate;
+
+@property (nonatomic, assign) CGFloat spacing;
+
 /*!
  * The maximum rate
  */

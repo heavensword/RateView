@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>64E833C7-6AA0-4B57-959C-9321829E6987</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RankViewDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9BF01BD034706F4756CFC3C33BCCC0BD7370CE4B</key>
+		<string>https://github.com/heavensword/RankView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RankViewDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9BF01BD034706F4756CFC3C33BCCC0BD7370CE4B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/heavensword/RankView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9BF01BD034706F4756CFC3C33BCCC0BD7370CE4B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9BF01BD034706F4756CFC3C33BCCC0BD7370CE4B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RankView</string>
+		</dict>
+	</array>
+</dict>
+</plist>

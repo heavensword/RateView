@@ -26,6 +26,7 @@
 #pragma mark - private methods
 - (void)initComponents
 {
+    _spacing = 0;
     _x = 0;
     _number = 5;    
     _scrollToRate = TRUE;
@@ -61,12 +62,19 @@
 
 - (void)changeRankWithLocation:(CGPoint)location
 {
-    NSInteger rate = ((location.x - [self marginX]) / self.iconSize.width);
+    NSInteger rate = ((location.x - [self marginX] + _spacing) / (self.iconSize.width + _spacing));
     if (_scrollToRate) {
         _x = location.x;
-        if (rate >= 0 && rate <= _number) {
-            _rate = rate;
-        }        
+        CGFloat tmpRate = rate;
+        if (location.x >= [self marginX] + rate * (self.iconSize.width + _spacing)) {
+            tmpRate = rate + (location.x - rate * (self.iconSize.width + _spacing)- [self marginX]) / self.iconSize.width;
+        }
+        else {
+            tmpRate = rate;
+        }
+        if (tmpRate >= 0 && tmpRate <= _number) {
+            _rate = tmpRate;
+        }
     }
     else {
         rate = ceil(((location.x - [self marginX]) / self.iconSize.width));
@@ -80,7 +88,7 @@
 
 - (CGFloat)marginX
 {
-    return  (CGRectGetWidth(self.bounds) - self.iconSize.width * _number) / 2;;
+    return  (CGRectGetWidth(self.bounds) - self.iconSize.width * _number - (_number - 1) * self.spacing) / 2;;
 }
 
 - (CGRect)getImageViewFrameWithIndex:(CGFloat) index
@@ -92,8 +100,10 @@
         y = 0;
     }
     CGFloat x = index * self.iconSize.width;
+    x += marginX;
+    x += index * self.spacing;
     CGFloat width = self.iconSize.width;
-    CGRect rect = CGRectMake(marginX + x, y, width, self.iconSize.height);
+    CGRect rect = CGRectMake(x, y, width, self.iconSize.height);
     return rect;
 }
 
@@ -135,7 +145,7 @@
         imageView.frame = [self getImageViewFrameWithIndex:i];
         [self sendSubviewToBack:imageView];
     }
-    n = (NSInteger)_rate;
+    n = ceil(_rate);
     for (NSInteger i = 0; i < n; i++) 
     {
         key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%d", i];         
