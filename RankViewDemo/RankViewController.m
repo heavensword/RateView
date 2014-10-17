@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Sword. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RankViewController.h"
 #import "RankView.h"
 
-@interface ViewController ()
+@interface RankViewController ()
 
 @property (weak, nonatomic) IBOutlet RankView *firstRankView;
 @property (weak, nonatomic) IBOutlet RankView *secondRankView;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation ViewController
+@implementation RankViewController
 
 - (void)viewDidLoad
 {

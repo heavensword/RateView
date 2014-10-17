@@ -116,8 +116,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) 
-    {
+    if (self) {
         [self initComponents];
     }
     return self;
@@ -152,8 +151,7 @@
         [self sendSubviewToBack:imageView];
     }
     n = ceil(_rate);
-    for (NSInteger i = 0; i < n; i++) 
-    {
+    for (NSInteger i = 0; i < n; i++) {
         key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%d", i];         
         imageView = _starImageViewsDic[key];
         if (!imageView) 
@@ -167,8 +165,7 @@
         [_starContentView bringSubviewToFront:imageView];        
     }
     CGFloat rating = _rate - n;
-    if (rating > 0.0)
-    {   
+    if (rating > 0.0) {
         key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%d", n];         
         imageView = _starImageViewsDic[key];
         if (!imageView) 
