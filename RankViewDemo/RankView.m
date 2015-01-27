@@ -3,7 +3,7 @@
 //  TaoBan
 //
 //  Created by Sword on 11-11-2.
-//  Copyright (c) 2011年 itotemstudio. All rights reserved.
+//  Copyright (c) 2011年 Sword. All rights reserved.
 //
 
 #import "RankView.h"
@@ -62,10 +62,10 @@
 
 - (void)changeRankWithLocation:(CGPoint)location
 {
-    NSInteger rate = ((location.x - [self marginX] + _spacing) / (self.iconSize.width + _spacing));
+    NSInteger rate = (location.x - [self marginX] + _spacing) / (self.iconSize.width + _spacing);
     if (_scrollToRate) {
         _x = location.x;
-        CGFloat tmpRate = rate;
+        CGFloat tmpRate;
         if (location.x >= [self marginX] + rate * (self.iconSize.width + _spacing)) {
             tmpRate = rate + (location.x - rate * (self.iconSize.width + _spacing)- [self marginX]) / self.iconSize.width;
         }
@@ -77,7 +77,7 @@
         }
     }
     else {
-        rate = ceil(((location.x - [self marginX]) / self.iconSize.width));
+        rate = ceil((location.x - [self marginX] + _spacing) / (self.iconSize.width + _spacing));
         if (rate < 0) {
             _rate = 0;
         }

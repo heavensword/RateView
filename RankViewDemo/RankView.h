@@ -3,7 +3,7 @@
 //  TaoBan
 //
 //  Created by Sword on 11-11-2.
-//  Copyright (c) 2011年 itotemstudio. All rights reserved.
+//  Copyright (c) 2011年 Sword. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -31,6 +31,7 @@
  * The caller have to define iconsize, otherwise cause an exception.
  */
 @property (nonatomic, assign) CGSize  iconSize;
+
 @property (nonatomic, strong) NSString *foreheadImageName;
 @property (nonatomic, strong) NSString *backgroundImageName;
 
