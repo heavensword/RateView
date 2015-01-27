@@ -2,3 +2,26 @@ RankView
 ========
 
 a custom rank view, it supprots custom forehead image and background image
+
+# Usage
+
+```objective-c
+
+self.firstRankView.foreheadImageName = @"goldLeafItalics";
+self.firstRankView.backgroundImageName = @"sliverLeafItalics";
+self.firstRankView.iconSize = CGSizeMake(46, 23.5);
+self.firstRankView.scrollToRate = TRUE;
+
+self.secondRankView.foreheadImageName = @"like_ac";
+self.secondRankView.backgroundImageName = @"like";
+self.secondRankView.iconSize = CGSizeMake(25, 25);
+self.secondRankView.scrollToRate = TRUE;
+self.secondRankView.spacing = 5;
+
+self.thirdRankView.foreheadImageName = @"btn_star";
+self.thirdRankView.backgroundImageName = @"bg_star";
+self.thirdRankView.iconSize = CGSizeMake(17, 16);
+self.thirdRankView.scrollToRate = FALSE;
+self.thirdRankView.spacing = 5;
+
+```
