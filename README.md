@@ -7,7 +7,11 @@ a custom rank view, it supprots custom forehead image and background image
 
 # Usage
 
+You can add RankView to super view using xib or code. Details in Demo.
+
+
 ```objective-c
+#import "RankView.h"
 
 self.firstRankView.foreheadImageName = @"goldLeafItalics";
 self.firstRankView.backgroundImageName = @"sliverLeafItalics";
