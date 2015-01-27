@@ -3,6 +3,8 @@ RankView
 
 a custom rank view, it supprots custom forehead image and background image
 
+<img width="320px;" height="568px;" src="https://raw.githubusercontent.com/heavensword/RankView/master/ScreenShots/screenshots1.png"></img>
+
 # Usage
 
 ```objective-c
