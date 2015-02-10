@@ -137,49 +137,55 @@
     CGFloat marginY = (CGRectGetHeight(self.bounds) - self.iconSize.height) / 2;
     if (marginY < 0) {
         marginY = 0;
-    }    
+    }
     for (NSInteger i = 0; i < n; i++) {
-        bgKey = [[NSString alloc] initWithFormat:@"KEY_BGIMAGEVIEW_%d", i];
+        bgKey = [[NSString alloc] initWithFormat:@"KEY_BGIMAGEVIEW_%ld", i];
         imageView = _backgroundImageViewsDic[bgKey];
         if (!imageView) {
             imageView = [[UIImageView alloc] init];
             _backgroundImageViewsDic[bgKey] = imageView;
-            [self addSubview:imageView];             
+            [self addSubview:imageView];
         }
         imageView.image = [UIImage imageNamed:self.backgroundImageName];
         imageView.frame = [self getImageViewFrameWithIndex:i];
         [self sendSubviewToBack:imageView];
     }
-    n = ceil(_rate);
+    n = floorf(_rate);
+    CGFloat x = 0;
     for (NSInteger i = 0; i < n; i++) {
-        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%d", i];         
+        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%ld", i];
         imageView = _starImageViewsDic[key];
-        if (!imageView) 
-        {       
+        if (!imageView)
+        {
             imageView = [[UIImageView alloc] init];
             _starImageViewsDic[key] = imageView;
-            [_starContentView addSubview:imageView];             
+            [_starContentView addSubview:imageView];
         }
         imageView.image = [UIImage imageNamed:self.foreheadImageName];
-        imageView.frame = [self getImageViewFrameWithIndex:i];        
-        [_starContentView bringSubviewToFront:imageView];        
+        imageView.frame = [self getImageViewFrameWithIndex:i];
+        [_starContentView bringSubviewToFront:imageView];
+        x = CGRectGetMaxX(imageView.frame);
     }
     CGFloat rating = _rate - n;
-    if (rating > 0.0) {
-        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%d", n];         
+    if (fabsf(rating) > 0.0) {
+        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%ld", n];
         imageView = _starImageViewsDic[key];
-        if (!imageView) 
-        {       
+        if (!imageView)
+        {
             imageView = [[UIImageView alloc] init];
             _starImageViewsDic[key] = imageView;
         }
         [_starContentView addSubview:imageView];
-        imageView.image = [UIImage imageNamed:self.foreheadImageName];        
+        imageView.image = [UIImage imageNamed:self.foreheadImageName];
         imageView.frame = [self getImageViewFrameWithIndex:n];
         [_starContentView bringSubviewToFront:imageView];
+        x += rating * CGRectGetWidth(imageView.frame);
+    }
+    if (CGFLOAT_MIN == _x) {
+        _x = x + [self marginX];
     }
     _starContentView.frame = CGRectMake(0, 0, _x, CGRectGetHeight(self.bounds));
-    [self bringSubviewToFront:_starContentView];    
+    [self bringSubviewToFront:_starContentView];
 }
 
 - (void)setRate:(CGFloat)number
