@@ -3,12 +3,12 @@
 //  TaoBan
 //
 //  Created by Sword on 11-11-2.
-//  Copyright (c) 2011年 Sword. All rights reserved.
+//  Copyright (c) 2011年 itotemstudio. All rights reserved.
 //
 
-#import "RankView.h"
+#import "ZHJRankView.h"
 
-@interface RankView()
+@interface ZHJRankView()
 {
     CGFloat                 _x;
     CGFloat                 _rate;
@@ -21,14 +21,14 @@
 }
 @end
 
-@implementation RankView
+@implementation ZHJRankView
 
 #pragma mark - private methods
 - (void)initComponents
 {
     _spacing = 0;
-    _x = 0;
-    _number = 5;    
+    _x = CGFLOAT_MIN;
+    _number = 5;
     _scrollToRate = TRUE;
     _iconSize = CGSizeZero;
     // Initialization code
@@ -99,7 +99,7 @@
 
 - (CGRect)getImageViewFrameWithIndex:(CGFloat) index
 {
-
+    
     CGFloat marginX = [self marginX];
     CGFloat y = (CGRectGetHeight(self.bounds) - self.iconSize.height)/2;
     if (y < 0) {
@@ -179,10 +179,10 @@
         imageView.image = [UIImage imageNamed:self.foreheadImageName];
         imageView.frame = [self getImageViewFrameWithIndex:n];
         [_starContentView bringSubviewToFront:imageView];
-        x += rating * CGRectGetWidth(imageView.frame);
+        x += rating * CGRectGetWidth(imageView.frame) + self.spacing;
     }
     if (CGFLOAT_MIN == _x) {
-        _x = x + [self marginX];
+        _x = x;
     }
     _starContentView.frame = CGRectMake(0, 0, _x, CGRectGetHeight(self.bounds));
     [self bringSubviewToFront:_starContentView];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RankViewController : UIViewController
+@interface RankViewDemoController : UIViewController
 
 @end
 

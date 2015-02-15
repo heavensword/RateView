@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		5087BD1C19EF6B97003E65AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087BD1B19EF6B97003E65AA /* main.m */; };
 		5087BD1F19EF6B97003E65AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087BD1E19EF6B97003E65AA /* AppDelegate.m */; };
-		5087BD2219EF6B97003E65AA /* RankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087BD2119EF6B97003E65AA /* RankViewController.m */; };
+		5087BD2219EF6B97003E65AA /* RankViewDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087BD2119EF6B97003E65AA /* RankViewDemoController.m */; };
 		5087BD2519EF6B97003E65AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5087BD2319EF6B97003E65AA /* Main.storyboard */; };
 		5087BD2719EF6B97003E65AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5087BD2619EF6B97003E65AA /* Images.xcassets */; };
 		5087BD2A19EF6B97003E65AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5087BD2819EF6B97003E65AA /* LaunchScreen.xib */; };
 		5087BD3619EF6B97003E65AA /* RankViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087BD3519EF6B97003E65AA /* RankViewDemoTests.m */; };
-		5087BD4119EF6BA4003E65AA /* RankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087BD4019EF6BA4003E65AA /* RankView.m */; };
+		5087BD4119EF6BA4003E65AA /* ZHJRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087BD4019EF6BA4003E65AA /* ZHJRankView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +33,16 @@
 		5087BD1B19EF6B97003E65AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5087BD1D19EF6B97003E65AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5087BD1E19EF6B97003E65AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5087BD2019EF6B97003E65AA /* RankViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankViewController.h; sourceTree = "<group>"; };
-		5087BD2119EF6B97003E65AA /* RankViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankViewController.m; sourceTree = "<group>"; };
+		5087BD2019EF6B97003E65AA /* RankViewDemoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankViewDemoController.h; sourceTree = "<group>"; };
+		5087BD2119EF6B97003E65AA /* RankViewDemoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankViewDemoController.m; sourceTree = "<group>"; };
 		5087BD2419EF6B97003E65AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5087BD2619EF6B97003E65AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5087BD2919EF6B97003E65AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5087BD2F19EF6B97003E65AA /* RankViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RankViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087BD3419EF6B97003E65AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5087BD3519EF6B97003E65AA /* RankViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankViewDemoTests.m; sourceTree = "<group>"; };
-		5087BD3F19EF6BA4003E65AA /* RankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankView.h; sourceTree = "<group>"; };
-		5087BD4019EF6BA4003E65AA /* RankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankView.m; sourceTree = "<group>"; };
+		5087BD3F19EF6BA4003E65AA /* ZHJRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHJRankView.h; sourceTree = "<group>"; };
+		5087BD4019EF6BA4003E65AA /* ZHJRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHJRankView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +84,12 @@
 		5087BD1819EF6B97003E65AA /* RankViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5087BD3F19EF6BA4003E65AA /* RankView.h */,
-				5087BD4019EF6BA4003E65AA /* RankView.m */,
+				5087BD3F19EF6BA4003E65AA /* ZHJRankView.h */,
+				5087BD4019EF6BA4003E65AA /* ZHJRankView.m */,
 				5087BD1D19EF6B97003E65AA /* AppDelegate.h */,
 				5087BD1E19EF6B97003E65AA /* AppDelegate.m */,
-				5087BD2019EF6B97003E65AA /* RankViewController.h */,
-				5087BD2119EF6B97003E65AA /* RankViewController.m */,
+				5087BD2019EF6B97003E65AA /* RankViewDemoController.h */,
+				5087BD2119EF6B97003E65AA /* RankViewDemoController.m */,
 				5087BD2319EF6B97003E65AA /* Main.storyboard */,
 				5087BD2619EF6B97003E65AA /* Images.xcassets */,
 				5087BD2819EF6B97003E65AA /* LaunchScreen.xib */,
@@ -224,8 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5087BD4119EF6BA4003E65AA /* RankView.m in Sources */,
-				5087BD2219EF6B97003E65AA /* RankViewController.m in Sources */,
+				5087BD4119EF6BA4003E65AA /* ZHJRankView.m in Sources */,
+				5087BD2219EF6B97003E65AA /* RankViewDemoController.m in Sources */,
 				5087BD1F19EF6B97003E65AA /* AppDelegate.m in Sources */,
 				5087BD1C19EF6B97003E65AA /* main.m in Sources */,
 			);
