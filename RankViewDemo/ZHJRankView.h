@@ -22,7 +22,6 @@
 @property (nonatomic, assign) CGFloat rate;
 
 @property (nonatomic, assign) CGFloat spacing;
-
 /*!
  * The maximum rate
  */

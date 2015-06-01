@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RankViewDemo/ZHJRankView.m"
-            timestampString = "436788633.704105"
+            timestampString = "454864921.688674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "-setRate:"
             landmarkType = "5">
          </BreakpointContent>

@@ -23,6 +23,80 @@
 
 @implementation ZHJRankView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initComponents];
+    }
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self initComponents];
+}
+
+- (void)layoutSubviews
+{
+    NSInteger n = (NSInteger)_number;
+    NSString *bgKey = nil;
+    NSString *key = nil;
+    UIImageView *imageView;
+    CGFloat marginY = (CGRectGetHeight(self.bounds) - self.iconSize.height) / 2;
+    if (marginY < 0) {
+        marginY = 0;
+    }
+    for (NSInteger i = 0; i < n; i++) {
+        bgKey = [[NSString alloc] initWithFormat:@"KEY_BGIMAGEVIEW_%ld", i];
+        imageView = _backgroundImageViewsDic[bgKey];
+        if (!imageView) {
+            imageView = [[UIImageView alloc] init];
+            _backgroundImageViewsDic[bgKey] = imageView;
+            [self addSubview:imageView];
+        }
+        imageView.image = [UIImage imageNamed:self.backgroundImageName];
+        imageView.frame = [self getImageViewFrameWithIndex:i];
+        [self sendSubviewToBack:imageView];
+    }
+    n = floorf(_rate);
+    CGFloat x = 0;
+    for (NSInteger i = 0; i < n; i++) {
+        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%ld", i];
+        imageView = _starImageViewsDic[key];
+        if (!imageView)
+        {
+            imageView = [[UIImageView alloc] init];
+            _starImageViewsDic[key] = imageView;
+            [_starContentView addSubview:imageView];
+        }
+        imageView.image = [UIImage imageNamed:self.foreheadImageName];
+        imageView.frame = [self getImageViewFrameWithIndex:i];
+        [_starContentView bringSubviewToFront:imageView];
+        x = CGRectGetMaxX(imageView.frame);
+    }
+    CGFloat rating = _rate - n;
+    if (fabs(rating) > 0.0) {
+        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%ld", n];
+        imageView = _starImageViewsDic[key];
+        if (!imageView) {
+            imageView = [[UIImageView alloc] init];
+            _starImageViewsDic[key] = imageView;
+        }
+        [_starContentView addSubview:imageView];
+        imageView.image = [UIImage imageNamed:self.foreheadImageName];
+        imageView.frame = [self getImageViewFrameWithIndex:n];
+        [_starContentView bringSubviewToFront:imageView];
+        x += rating * CGRectGetWidth(imageView.frame) + self.spacing;
+    }
+    if (CGFLOAT_MIN == _x) {
+        _x = x;
+    }
+    _starContentView.frame = CGRectMake(0, 0, _x, CGRectGetHeight(self.bounds));
+    [self bringSubviewToFront:_starContentView];
+}
+
 #pragma mark - private methods
 - (void)initComponents
 {
@@ -99,7 +173,6 @@
 
 - (CGRect)getImageViewFrameWithIndex:(CGFloat) index
 {
-    
     CGFloat marginX = [self marginX];
     CGFloat y = (CGRectGetHeight(self.bounds) - self.iconSize.height)/2;
     if (y < 0) {
@@ -111,81 +184,6 @@
     CGFloat width = self.iconSize.width;
     CGRect rect = CGRectMake(x, y, width, self.iconSize.height);
     return rect;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self initComponents];
-    }
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self initComponents];
-}
-
-- (void)layoutSubviews
-{
-    NSInteger n = (NSInteger)_number;
-    NSString *bgKey = nil;
-    NSString *key = nil;
-    UIImageView *imageView;
-    CGFloat marginY = (CGRectGetHeight(self.bounds) - self.iconSize.height) / 2;
-    if (marginY < 0) {
-        marginY = 0;
-    }
-    for (NSInteger i = 0; i < n; i++) {
-        bgKey = [[NSString alloc] initWithFormat:@"KEY_BGIMAGEVIEW_%ld", i];
-        imageView = _backgroundImageViewsDic[bgKey];
-        if (!imageView) {
-            imageView = [[UIImageView alloc] init];
-            _backgroundImageViewsDic[bgKey] = imageView;
-            [self addSubview:imageView];
-        }
-        imageView.image = [UIImage imageNamed:self.backgroundImageName];
-        imageView.frame = [self getImageViewFrameWithIndex:i];
-        [self sendSubviewToBack:imageView];
-    }
-    n = floorf(_rate);
-    CGFloat x = 0;
-    for (NSInteger i = 0; i < n; i++) {
-        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%ld", i];
-        imageView = _starImageViewsDic[key];
-        if (!imageView)
-        {
-            imageView = [[UIImageView alloc] init];
-            _starImageViewsDic[key] = imageView;
-            [_starContentView addSubview:imageView];
-        }
-        imageView.image = [UIImage imageNamed:self.foreheadImageName];
-        imageView.frame = [self getImageViewFrameWithIndex:i];
-        [_starContentView bringSubviewToFront:imageView];
-        x = CGRectGetMaxX(imageView.frame);
-    }
-    CGFloat rating = _rate - n;
-    if (fabsf(rating) > 0.0) {
-        key  = [[NSString alloc] initWithFormat:@"KEY_IMAGEVIEW_%ld", n];
-        imageView = _starImageViewsDic[key];
-        if (!imageView)
-        {
-            imageView = [[UIImageView alloc] init];
-            _starImageViewsDic[key] = imageView;
-        }
-        [_starContentView addSubview:imageView];
-        imageView.image = [UIImage imageNamed:self.foreheadImageName];
-        imageView.frame = [self getImageViewFrameWithIndex:n];
-        [_starContentView bringSubviewToFront:imageView];
-        x += rating * CGRectGetWidth(imageView.frame) + self.spacing;
-    }
-    if (CGFLOAT_MIN == _x) {
-        _x = x;
-    }
-    _starContentView.frame = CGRectMake(0, 0, _x, CGRectGetHeight(self.bounds));
-    [self bringSubviewToFront:_starContentView];
 }
 
 - (void)setRate:(CGFloat)number
