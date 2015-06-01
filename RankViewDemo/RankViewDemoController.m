@@ -41,6 +41,7 @@
     self.thirdRankView.scrollToRate = FALSE;
     self.thirdRankView.spacing = 5;
     self.thirdRankView.rate = 4.5;
+    self.thirdRankView.userInteractionEnabled = FALSE;
 }
 
 - (void)didReceiveMemoryWarning

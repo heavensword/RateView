@@ -29,5 +29,6 @@ self.thirdRankView.backgroundImageName = @"bg_star";
 self.thirdRankView.iconSize = CGSizeMake(17, 16);
 self.thirdRankView.scrollToRate = FALSE;
 self.thirdRankView.spacing = 5;
+self.thirdRankView.userInteractionEnabled = FALSE;
 
 ```
